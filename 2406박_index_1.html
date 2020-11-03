@@ -1,27 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<!--학번(yyyymmdd)_1.html -->
-
-<head>
-    <title> Canvas 2D API</title>
-    <meta charset="utf-8">
-    <script>
-        window.onload = function() {
-            var canvas = document.getElementById("canvas");
-            var context = canvas.getContext("2d");
-            context.fillStyle = "green";
-            context.fillRect(0, 0, 150, 100);
-            context.fillText("Hello, HTML5!", 155, 110);
-            context.beginPath();
-            context.moveTo(170, 200);
-            context.lineTo(300, 200);
-            context.rect(0, 0, 400, 400);
-            context.stroke();
-            context.closePath();
-        };
-    </script>
-</head>
 
 <body>
-    <canvas id="canvas" height="400" width="400">This browser doesn't support canvas</canvas>
-</body></html>
+
+
+    
+
+    <button id="text" onclick="drawText()">Text 예제 보이기</button>
+
+    <button onclick="drawImage()">Image 예제 보이기</button>
+    
+    <br><br>
+    <img id="scream" width="220" height="277" src="D:\2406ㅄㄱ\11003\images\scream.jpg" alt="The Scream">
+
+    <br>
+    <canvas id="canvas" width="240" height="297" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+    <script>
+        function drawText() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            context.font = "30px Comic Sans MS";
+            context.fillStyle = "red";
+            context.textAlign = "center";
+            context.fillText("Hello world", canvas.width / 2, canvas.height / 2);
+            
+        }
+        
+        
+
+        function drawImage() {
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var img = document.getElementById("scream");
+            ctx.drawImage(img, 10, 10);
+        }
+
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
